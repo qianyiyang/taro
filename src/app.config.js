@@ -1,8 +1,8 @@
 export default {
-    pages: ["pages/index/index", "pages/list/list"],
+    pages: ["pages/index/index"],
     window: {
         backgroundTextStyle: "light",
-        navigationBarBackgroundColor: "#fff",
+        navigationBarBackgroundColor: "#dc4238",
         navigationBarTitleText: "WeChat",
         navigationBarTextStyle: "black",
     },
