@@ -42,8 +42,8 @@ export default class Index extends Component {
                 <AtTabBar
                     tabList={[
                         { title: "我的" },
-                        { title: "拍照" },
-                        { title: "通讯录" },
+                        { title: "发现" },
+                        { title: "歌单" },
                     ]}
                     onClick={this.handleClick}
                     current={this.state.current}
