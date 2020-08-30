@@ -19,13 +19,13 @@ export default class Index extends Component {
     state = {
         tabBarCurrent: 0,
         musicIcon: "play", // 底部音乐播放按钮icon
+        innerAudioContext: "",
     };
 
     // 导航栏tab改变
     tabBarChange = (value) => {
         this.setState({
             tabBarCurrent: value,
-            innerAudioContext: "",
         });
     };
 
