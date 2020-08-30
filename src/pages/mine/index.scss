@@ -1,0 +1,20 @@
+@import "~taro-ui/dist/style/components/avatar.scss";
+@import "~taro-ui/dist/style/components/flex.scss";
+@import "~taro-ui/dist/style/components/button.scss";
+@import "~taro-ui/dist/style/components/tab-bar.scss";
+
+.mine_content {
+    margin-top: 26px;
+}
+.mine_name {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.user_grade .at-button {
+    border: 0;
+    background-color: rgba(205, 205, 205, 0.3);
+}
+
+.mine_classification {
+    margin-top: 26px;
+}
