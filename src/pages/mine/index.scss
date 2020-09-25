@@ -2,22 +2,39 @@
 @import "~taro-ui/dist/style/components/flex.scss";
 @import "~taro-ui/dist/style/components/button.scss";
 @import "~taro-ui/dist/style/components/grid.scss";
+@import "./../../app.scss";
 
 .mine_content {
     margin-top: 26px;
-}
-.mine_name {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-.user_grade {
-    .at-button--small {
-        height: 40px;
-        line-height: 40px;
-        font-size: 26px;
+
+    .mine_name {
+        font-size: $primary-size;
+        margin-bottom: 20px;
     }
-    .at-button {
-        border: 0;
-        background-color: rgba(205, 205, 205, 0.3);
+
+    .user_grade {
+        .at-button--small {
+            height: 40px;
+            line-height: 40px;
+            font-size: 24px;
+        }
+        .at-button {
+            border: 0;
+            background-color: rgba(205, 205, 205, 0.3);
+        }
+    }
+
+    .taro-grid {
+        margin-top: 40px;
+        border-radius: 10px;
+        background-color: #fff;
+
+        .at-grid__flex .content-inner__text {
+            font-size: $primary-size;
+        }
+        .at-grid__flex .content-inner__img {
+            width: 60px;
+            height: 60px;
+        }
     }
 }

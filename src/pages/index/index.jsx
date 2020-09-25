@@ -1,21 +1,29 @@
 import React, { Component } from "react";
 import Taro from "@tarojs/taro";
+import { connect } from "react-redux";
 import { AtNavBar, AtTabBar, AtAvatar, AtIcon } from "taro-ui";
-import { View, Swiper, SwiperItem } from "@tarojs/components";
+import { View, Swiper, SwiperItem, Button, Text } from "@tarojs/components";
+import { add, minus, asyncAdd } from "../../actions/counter";
 import Mine from "./../mine";
 import "./index.scss";
 
-export default class Index extends Component {
-    componentWillMount() {}
-
-    componentDidMount() {}
-
-    componentWillUnmount() {}
-
-    componentDidShow() {}
-
-    componentDidHide() {}
-
+@connect(
+    ({ counter }) => ({
+        counter,
+    }),
+    (dispatch) => ({
+        add() {
+            dispatch(add());
+        },
+        dec() {
+            dispatch(minus());
+        },
+        asyncAdd() {
+            dispatch(asyncAdd());
+        },
+    })
+)
+class Index extends Component {
     state = {
         tabBarCurrent: 0,
         musicIcon: "play", // 底部音乐播放按钮icon
@@ -62,6 +70,7 @@ export default class Index extends Component {
         const { tabBarCurrent, musicIcon } = this.state;
         const tabBar = (
             <AtTabBar
+                className="subject-tab-bar"
                 tabList={[{ title: "我的" }, { title: "发现" }]}
                 onClick={this.tabBarChange}
                 current={this.state.tabBarCurrent}
@@ -70,15 +79,35 @@ export default class Index extends Component {
         return (
             <View className="subject">
                 <AtNavBar
+                    fixed
                     onClickRgIconSt={this.handleClick}
                     color="#000"
                     title={tabBar}
                     rightFirstIconType="search"
                     border={false}
+                    className="subject-nav-bar"
                 />
 
                 {/* 我的 */}
                 {tabBarCurrent === 0 && <Mine />}
+
+                <View className="index">
+                    <Button className="add_btn" onClick={this.props.add}>
+                        +
+                    </Button>
+                    <Button className="dec_btn" onClick={this.props.dec}>
+                        -
+                    </Button>
+                    <Button className="dec_btn" onClick={this.props.asyncAdd}>
+                        async
+                    </Button>
+                    <View>
+                        <Text>{this.props.counter.num}</Text>
+                    </View>
+                    <View>
+                        <Text>Hello, World</Text>
+                    </View>
+                </View>
 
                 {/* 底部歌曲滚动 */}
                 <Swiper className="music_list">
@@ -117,3 +146,4 @@ export default class Index extends Component {
         );
     }
 }
+export default Index;

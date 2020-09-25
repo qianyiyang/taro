@@ -1,10 +1,20 @@
 import React, { Component } from "react";
+import Taro from "@tarojs/taro";
 import { AtAvatar, AtButton, AtGrid } from "taro-ui";
 import { View } from "@tarojs/components";
 import "./index.scss";
 
 export default class index extends Component {
     state = {};
+
+    componentDidMount() {
+        Taro.request({
+            url: "http://172.16.1.218:3000/search/hot",
+            success: function (res) {
+                console.log(res);
+            },
+        });
+    }
 
     // 分类点击
     tabBarClick = (value) => {
@@ -36,7 +46,6 @@ export default class index extends Component {
                         </View>
                     </View>
                 </View>
-                <View></View>
                 <AtGrid
                     data={[
                         {
@@ -72,6 +81,7 @@ export default class index extends Component {
                     ]}
                     hasBorder={false}
                     columnNum={4}
+                    className="taro-grid"
                 />
             </View>
         );
