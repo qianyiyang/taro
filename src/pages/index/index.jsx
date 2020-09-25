@@ -76,7 +76,11 @@ export default class Index extends Component {
                     rightFirstIconType="search"
                     border={false}
                 />
+
+                {/* 我的 */}
                 {tabBarCurrent === 0 && <Mine />}
+
+                {/* 底部歌曲滚动 */}
                 <Swiper className="music_list">
                     <SwiperItem>
                         <View className="music_info at-row at-row__align--center">
