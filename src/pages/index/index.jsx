@@ -3,26 +3,10 @@ import Taro from "@tarojs/taro";
 import { connect } from "react-redux";
 import { AtNavBar, AtTabBar, AtAvatar, AtIcon } from "taro-ui";
 import { View, Swiper, SwiperItem, Button, Text } from "@tarojs/components";
-import { add, minus, asyncAdd } from "../../actions/counter";
+// import { add, minus, asyncAdd } from "../../actions/counter";
 import Mine from "./../mine";
 import "./index.scss";
 
-@connect(
-    ({ counter }) => ({
-        counter,
-    }),
-    (dispatch) => ({
-        add() {
-            dispatch(add());
-        },
-        dec() {
-            dispatch(minus());
-        },
-        asyncAdd() {
-            dispatch(asyncAdd());
-        },
-    })
-)
 class Index extends Component {
     state = {
         tabBarCurrent: 0,
@@ -66,6 +50,13 @@ class Index extends Component {
         });
     };
 
+    add = () => {
+        const { dispatch } = this.props;
+        dispatch({
+            type: "ADD",
+        });
+    };
+
     render() {
         const { tabBarCurrent, musicIcon } = this.state;
         const tabBar = (
@@ -92,7 +83,7 @@ class Index extends Component {
                 {tabBarCurrent === 0 && <Mine />}
 
                 <View className="index">
-                    <Button className="add_btn" onClick={this.props.add}>
+                    <Button className="add_btn" onClick={this.add}>
                         +
                     </Button>
                     <Button className="dec_btn" onClick={this.props.dec}>
@@ -146,4 +137,26 @@ class Index extends Component {
         );
     }
 }
-export default Index;
+
+function mapStateToProps(value) {
+    return {
+        counter: value.counter,
+    };
+}
+
+function mapActionToProps(dispatch) {
+    return {
+        dispatch,
+        // add() {
+        //     dispatch(add());
+        // },
+        // dec() {
+        //     dispatch(minus());
+        // },
+        // asyncAdd() {
+        //     dispatch(asyncAdd());
+        // },
+    };
+}
+
+export default connect(mapStateToProps, mapActionToProps)(Index);
