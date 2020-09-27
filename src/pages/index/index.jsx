@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Taro from "@tarojs/taro";
 import { connect } from "react-redux";
 import { AtNavBar, AtTabBar, AtAvatar, AtIcon } from "taro-ui";
-import { View, Swiper, SwiperItem, Button, Text } from "@tarojs/components";
+import { View, Swiper, SwiperItem } from "@tarojs/components";
 // import { add, minus, asyncAdd } from "../../actions/counter";
 import Mine from "./../mine";
 import "./index.scss";
@@ -50,12 +50,12 @@ class Index extends Component {
         });
     };
 
-    add = () => {
-        const { dispatch } = this.props;
-        dispatch({
-            type: "ADD",
-        });
-    };
+    // add = () => {
+    //     const { dispatch } = this.props;
+    //     dispatch({
+    //         type: "ADD",
+    //     });
+    // };
 
     render() {
         const { tabBarCurrent, musicIcon } = this.state;
@@ -82,7 +82,7 @@ class Index extends Component {
                 {/* 我的 */}
                 {tabBarCurrent === 0 && <Mine />}
 
-                <View className="index">
+                {/* <View className="index">
                     <Button className="add_btn" onClick={this.add}>
                         +
                     </Button>
@@ -98,7 +98,7 @@ class Index extends Component {
                     <View>
                         <Text>Hello, World</Text>
                     </View>
-                </View>
+                </View> */}
 
                 {/* 底部歌曲滚动 */}
                 <Swiper className="music_list">

@@ -1,3 +1,5 @@
+import path from "path";
+
 const config = {
     projectName: "taro-demo",
     date: "2020-8-26",
@@ -54,6 +56,11 @@ const config = {
                 },
             },
         },
+    },
+    alias: {
+        "@/utils": path.resolve(__dirname, "..", "src/utils"),
+        "@/api": path.resolve(__dirname, "..", "src/api"),
+        "@/actions": path.resolve(__dirname, "..", "src/actions"),
     },
 };
 
