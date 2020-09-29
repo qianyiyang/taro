@@ -25,7 +25,7 @@
         }
     }
 
-    .music_list {
+    .music-list {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -34,26 +34,26 @@
         z-index: 9999;
         color: #000;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
-        .music_info {
+        .music-info {
             margin-top: 20px;
-            .music_pic {
+            .music-pic {
                 margin-left: 30px;
             }
-            .music_name {
+            .music-name {
                 font-size: 24px;
-                .music_title {
+                .music-title {
                     font-size: 30px;
                 }
-                .music_lyric {
+                .music-lyric {
                     font-size: 28px;
                     color: rgba(0, 0, 0, 0.6);
                 }
             }
-            .music_operate {
+            .music-operate {
                 text-align: right;
                 padding-right: 30px;
             }
-            .music_paly {
+            .music-play {
                 margin-right: 20px;
             }
         }

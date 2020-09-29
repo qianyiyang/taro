@@ -21,7 +21,7 @@ export default class index extends Component {
 
     render() {
         return (
-            <View className="mine_content">
+            <View className="mine-content">
                 <View className="at-row at-row__align--center">
                     <View className="at-col at-col-3">
                         <View style={{ marginLeft: 20 }}>
@@ -33,10 +33,10 @@ export default class index extends Component {
                         </View>
                     </View>
                     <View className="at-col at-col-9">
-                        <view className="mine_name">大白丶123</view>
+                        <view className="mine-name">大白丶123</view>
                         <View
                             style={{ display: "inline-block" }}
-                            className="user_grade"
+                            className="user-grade"
                         >
                             <AtButton size="small" circle>
                                 Lv.9

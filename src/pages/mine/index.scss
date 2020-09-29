@@ -4,15 +4,15 @@
 @import "~taro-ui/dist/style/components/grid.scss";
 @import "./../../app.scss";
 
-.mine_content {
+.mine-content {
     margin-top: 26px;
 
-    .mine_name {
+    .mine-name {
         font-size: $primary-size;
         margin-bottom: 20px;
     }
 
-    .user_grade {
+    .user-grade {
         .at-button--small {
             height: 40px;
             line-height: 40px;

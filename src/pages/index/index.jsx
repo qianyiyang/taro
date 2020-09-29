@@ -101,26 +101,26 @@ class Index extends Component {
                 </View> */}
 
                 {/* 底部歌曲滚动 */}
-                <Swiper className="music_list">
+                <Swiper className="music-list">
                     <SwiperItem>
-                        <View className="music_info at-row at-row__align--center">
+                        <View className="music-info at-row at-row__align--center">
                             <View className="at-col at-col-2">
                                 <AtAvatar
                                     size="small"
                                     circle
                                     image="https://jdc.jd.com/img/200"
-                                    className="music_pic"
+                                    className="music-pic"
                                 ></AtAvatar>
                             </View>
                             <View className="at-col at-col-5 music_name">
-                                <View className="music_title">何以歌</View>
-                                <View className="music_lyric">发送到发生</View>
+                                <View className="music-title">何以歌</View>
+                                <View className="music-lyric">发送到发生</View>
                             </View>
-                            <View className="at-col at-col-5 music_operate">
+                            <View className="at-col at-col-5 music-operate">
                                 <AtIcon
                                     value={musicIcon}
                                     size="26"
-                                    className="music_paly"
+                                    className="music-play"
                                     onClick={this.musicPlay}
                                     color="rgba(0,0,0,0.8)"
                                 ></AtIcon>
