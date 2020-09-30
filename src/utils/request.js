@@ -8,6 +8,7 @@ export async function request(requestHandler = {}) {
         method = "get",
         closeLoading = false, // 默认显示Toast，如果设置true则不会显示Toast
         url = "",
+        contentType = "application/json",
     } = requestHandler;
 
     const token = Taro.getStorageSync("token");
@@ -24,7 +25,7 @@ export async function request(requestHandler = {}) {
         data: params,
         method,
         header: {
-            "content-type": "application/json",
+            "content-type": contentType,
             Authorization: token || "",
         },
     })

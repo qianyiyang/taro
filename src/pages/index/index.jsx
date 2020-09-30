@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { AtNavBar, AtTabBar, AtAvatar, AtIcon } from "taro-ui";
 import { View, Swiper, SwiperItem } from "@tarojs/components";
 // import { add, minus, asyncAdd } from "../../actions/counter";
-import Mine from "./../mine";
+import Mine from "./../Mine";
 import "./index.scss";
 
 class Index extends Component {

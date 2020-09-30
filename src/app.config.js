@@ -1,5 +1,5 @@
 export default {
-    pages: ["pages/index/index"],
+    pages: ["pages/Index/index", "pages/Login/index"],
     window: {
         backgroundTextStyle: "light",
         navigationBarBackgroundColor: "#dc4238",

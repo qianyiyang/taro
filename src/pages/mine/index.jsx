@@ -1,17 +1,41 @@
 import React, { Component } from "react";
-// import Taro from "@tarojs/taro";
+import Taro from "@tarojs/taro";
 import { AtAvatar, AtButton, AtGrid } from "taro-ui";
 import { View } from "@tarojs/components";
-import { getHot } from "@/api/mine";
+// import { userLogin, userDetail } from "@/api/mine";
+
 import "./index.scss";
 
 export default class index extends Component {
-    state = {};
+    state = {
+        avatarUrl: "https://jdc.jd.com/img/200", // 头像图片
+        nickName: "", // 用户昵称
+        userLevel: 0, // 用户等级
+    };
 
-    componentDidMount() {
-        getHot().then((res) => {
-            console.log(res);
-        });
+    async componentDidMount() {
+        // userLogin({
+        //     phone: 18315326282,
+        //     password: "199611qyang",
+        // }).then((res) => {
+        //     console.log(res);
+        //     Taro.setStorageSync("userInfo", res);
+        // });
+        const userInfo = Taro.getStorageSync("userInfo");
+        console.log(userInfo);
+
+        // const { userId, avatarUrl, nickname } = userInfo.profile;
+
+        // 获取用户详情
+        // const userData = await userDetail({
+        //     uid: userId,
+        // });
+
+        // this.setState({
+        //     avatarUrl: avatarUrl,
+        //     nickName: nickname,
+        //     userLevel: userData.level,
+        // });
     }
 
     // 分类点击
@@ -19,7 +43,15 @@ export default class index extends Component {
         console.log(value);
     };
 
+    // 用户登录
+    userLogin = () => {
+        Taro.navigateTo({
+            url: "/pages/Login/index",
+        });
+    };
+
     render() {
+        const { avatarUrl, nickName, userLevel } = this.state;
         return (
             <View className="mine-content">
                 <View className="at-row at-row__align--center">
@@ -28,21 +60,29 @@ export default class index extends Component {
                             <AtAvatar
                                 size="normal"
                                 circle
-                                image="https://jdc.jd.com/img/200"
+                                image={avatarUrl}
                             ></AtAvatar>
                         </View>
                     </View>
-                    <View className="at-col at-col-9">
-                        <view className="mine-name">大白丶123</view>
-                        <View
-                            style={{ display: "inline-block" }}
-                            className="user-grade"
-                        >
-                            <AtButton size="small" circle>
-                                Lv.9
-                            </AtButton>
+                    {nickName && (
+                        <View className="at-col at-col-9">
+                            <view className="mine-name">{nickName}</view>
+                            <View
+                                style={{ display: "inline-block" }}
+                                className="user-grade"
+                            >
+                                <AtButton size="small" circle>
+                                    Lv.{userLevel}
+                                </AtButton>
+                            </View>
                         </View>
-                    </View>
+                    )}
+                    {!nickName && (
+                        <View onClick={this.userLogin}>
+                            立即登录
+                            <View className="at-icon at-icon-chevron-right"></View>
+                        </View>
+                    )}
                 </View>
                 <AtGrid
                     data={[
