@@ -3,7 +3,7 @@ export default {
     window: {
         backgroundTextStyle: "light",
         navigationBarBackgroundColor: "#dc4238",
-        navigationBarTitleText: "WeChat",
+        navigationBarTitleText: "网抑云",
         navigationBarTextStyle: "black",
     },
     requiredBackgroundModes: ["audio"],

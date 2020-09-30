@@ -1,14 +1,34 @@
 @import "~taro-ui/dist/style/components/form.scss";
 @import "~taro-ui/dist/style/components/input.scss";
 @import "~taro-ui/dist/style/components/button.scss";
+@import "~taro-ui/dist/style/components/loading.scss";
+@import "~taro-ui/dist/style/components/toast.scss";
+
+@import "./../../app.scss";
 
 .user-login {
     width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 100vh;
+    position: relative;
+    background-color: $primary-color;
 
-    .user-login-btn {
-        margin-top: 40px;
+    .user-login-form {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .user-login-title {
+            width: 100%;
+            text-align: center;
+            line-height: 80px;
+            margin-bottom: 40px;
+            font-size: 46px;
+            font-weight: 600;
+        }
+
+        .user-login-btn {
+            margin-top: 40px;
+        }
     }
 }
