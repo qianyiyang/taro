@@ -14,13 +14,6 @@ export default class index extends Component {
     };
 
     async componentDidMount() {
-        // userLogin({
-        //     phone: 18315326282,
-        //     password: "199611qyang",
-        // }).then((res) => {
-        //     console.log(res);
-        //     Taro.setStorageSync("userInfo", res);
-        // });
         const userInfo = Taro.getStorageSync("userInfo");
         console.log(userInfo);
 
